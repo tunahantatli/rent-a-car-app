@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'dj_rest_auth',
 
     # my apss
-    'users'
+    'users',
+    'car',
 ]
 
 MIDDLEWARE = [
