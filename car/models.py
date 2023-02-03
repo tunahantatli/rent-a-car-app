@@ -30,4 +30,13 @@ class Reservation(models.Model):
     end_date = models.DateTimeField()
 
     def __str__(self):
-        return f'Customer:{self.customer}-Reserved: {self.car}- Start Date: {self.start_date}- End Date: {self.end_date}'
+        return f'Customer:{self.customer}-Reserved: {self.car}-Start Date: {self.start_date}- End Date: {self.end_date}'
+    
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=['customer', 'start_date', 'end_date'],
+                name='customer_rent_date'
+            )
+        ]
+        
